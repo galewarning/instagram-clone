@@ -32,6 +32,7 @@ const ReqUserPostPart = () => {
 					<div
 						onClick={() => setActiveTab(item.tab)}
 						className={`${
+							// check if it is the activeTab
 							activeTab === item.tab
 								? "border-t border-black"
 								: "opacity-60"
