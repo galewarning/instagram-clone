@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { IoReorderThreeOutline } from "react-icons/io5";
-import { mainu } from "./SidebarConfig";
+import { sidebarMenu } from "./SidebarConfig";
 import { useNavigate } from "react-router-dom";
 
 const Sidebar = () => {
@@ -28,7 +28,7 @@ const Sidebar = () => {
 						/>
 					</div>
 					<div className="mt-10">
-						{mainu.map((item) => (
+						{sidebarMenu.map((item) => (
 							<div
 								onClick={() => handleTabClick(item.title)}
 								className="flex items-center mb-5 cursor-pointer text-lg">
