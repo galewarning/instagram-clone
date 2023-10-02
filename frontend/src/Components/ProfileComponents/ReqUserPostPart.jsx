@@ -4,6 +4,7 @@ import { RiVideoAddLine } from "react-icons/ri";
 import { BiBookmark } from "react-icons/bi";
 import ReqUserPostCard from "./ReqUserPostCard";
 
+// tabs on the Profile page
 const ReqUserPostPart = () => {
 	const [activeTab, setActiveTab] = useState();
 	const tabs = [
