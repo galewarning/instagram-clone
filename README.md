@@ -1,4 +1,4 @@
-# an instagram clone with Java Spring Boot and React
+# An instagram clone with Java Spring Boot and React
 
 ## How to start
 
