@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { BsThreeDots } from "react-icons/bs";
+import { BsBookmark, BsBookmarkFill, BsThreeDots } from "react-icons/bs";
 import "./PostCard.css";
 import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
 import { FaRegComment } from "react-icons/fa";
@@ -8,12 +8,16 @@ import { RiSendPlaneLine } from "react-icons/ri";
 const PostCard = () => {
 	const [showDropDown, setShowDropDown] = useState(false);
 	const [isPostLiked, setIsPostLiked] = useState(false);
+	const [isSaved, setIsSaved] = useState(false);
 
 	const handleClick = () => {
 		setShowDropDown(!showDropDown);
 	};
 	const handlePostLike = () => {
 		setIsPostLiked(!isPostLiked);
+	};
+	const handleSavePost = () => {
+		setIsSaved(!isSaved);
 	};
 
 	return (
@@ -55,23 +59,37 @@ const PostCard = () => {
 					/>
 				</div>
 
-				<div>
-					<div>
-						{/* like comment and repost */}
+				<div className="flex justify-between items-center w-full px-5 py-4">
+					{/* like comment and repost */}
+					<div className="flex items-center space-x-2">
 						{isPostLiked ? (
 							<AiFillHeart
-								className="text=xl hover:opacity-50 cursor-pointer"
+								className="text-2xl hover:opacity-50 cursor-pointer text-red-600"
 								onClick={handlePostLike}
 							/>
 						) : (
 							<AiOutlineHeart
-								className="text=xl hover:opacity-50 cursor-pointer"
+								className="text-2xl hover:opacity-50 cursor-pointer"
 								onClick={handlePostLike}
 							/>
 						)}
 
-						<FaRegComment className="text=xl hover:opacity-50 cursor-pointer" />
-						<RiSendPlaneLine className="text=xl hover:opacity-50 cursor-pointer" />
+						<FaRegComment className="text-xl hover:opacity-50 cursor-pointer" />
+						<RiSendPlaneLine className="text-xl hover:opacity-50 cursor-pointer" />
+					</div>
+					{/* bookmark */}
+					<div className="cursor-pointer">
+						{isSaved ? (
+							<BsBookmarkFill
+								className="text-xl hover:opacity-50 cursor-pointer"
+								onClick={handleSavePost}
+							/>
+						) : (
+							<BsBookmark
+								className="text-xl hover:opacity-50 cursor-pointer"
+								onClick={handleSavePost}
+							/>
+						)}
 					</div>
 				</div>
 			</div>
